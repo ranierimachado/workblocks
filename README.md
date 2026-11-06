@@ -29,6 +29,8 @@ node scripts/install-frontend.mjs
 
 ## Import contract
 
+See the [plan feeding contract](contracts/feeding-contract.md) for the producer guide, field definitions, replacement behavior, examples, and API delivery instructions.
+
 `contracts/plan-v1.schema.json` is the mandatory JSON Schema. `examples/rani-plan.json` contains the supplied 24-hour partial week and 45-hour full week.
 
 Import through **Plan imports**, review the replacement summary, then confirm. Alternatively:
