@@ -1,0 +1,261 @@
+{
+  "format_version": 1,
+  "plan_name": "Weekly Work Plan — Rani Machado",
+  "timezone": "America/Sao_Paulo",
+  "effective_from": "2026-11-04",
+  "default_block_minutes": 180,
+  "priorities": [
+    {
+      "id": "us-job",
+      "rank": 1,
+      "name": "Remote job in the US"
+    },
+    {
+      "id": "learn-ai",
+      "rank": 2,
+      "name": "Learn AI"
+    },
+    {
+      "id": "training",
+      "rank": 3,
+      "name": "Train assessments and interviews"
+    },
+    {
+      "id": "brazil-job",
+      "rank": 4,
+      "name": "Remote job in Brazil"
+    },
+    {
+      "id": "hosting-calendar",
+      "rank": 5,
+      "name": "Hosting Calendar, remaining steps"
+    },
+    {
+      "id": "signalcvm",
+      "rank": 6,
+      "name": "SignalCVM marketing"
+    },
+    {
+      "id": "operations",
+      "rank": 7,
+      "name": "Operations of the live sites"
+    },
+    {
+      "id": "portfolio",
+      "rank": 8,
+      "name": "Portfolio visibility"
+    }
+  ],
+  "standing_plan": {
+    "notes": "Professional time only. No fixed clock times.",
+    "blocks": [
+      {
+        "day": "monday",
+        "slot": "morning",
+        "priority_id": "training"
+      },
+      {
+        "day": "monday",
+        "slot": "middle",
+        "priority_id": "us-job"
+      },
+      {
+        "day": "monday",
+        "slot": "evening",
+        "priority_id": "hosting-calendar"
+      },
+      {
+        "day": "tuesday",
+        "slot": "morning",
+        "priority_id": "learn-ai"
+      },
+      {
+        "day": "tuesday",
+        "slot": "middle",
+        "priority_id": "brazil-job"
+      },
+      {
+        "day": "tuesday",
+        "slot": "evening",
+        "priority_id": "signalcvm"
+      },
+      {
+        "day": "wednesday",
+        "slot": "morning",
+        "priority_id": "training"
+      },
+      {
+        "day": "wednesday",
+        "slot": "middle",
+        "priority_id": "us-job"
+      },
+      {
+        "day": "wednesday",
+        "slot": "evening",
+        "priority_id": "hosting-calendar"
+      },
+      {
+        "day": "thursday",
+        "slot": "morning",
+        "priority_id": "learn-ai"
+      },
+      {
+        "day": "thursday",
+        "slot": "middle",
+        "priority_id": "brazil-job"
+      },
+      {
+        "day": "thursday",
+        "slot": "evening",
+        "priority_id": "signalcvm"
+      },
+      {
+        "day": "friday",
+        "slot": "morning",
+        "priority_id": "training"
+      },
+      {
+        "day": "friday",
+        "slot": "middle",
+        "priority_id": "us-job"
+      },
+      {
+        "day": "friday",
+        "slot": "evening",
+        "priority_id": "operations"
+      }
+    ]
+  },
+  "weeks": [
+    {
+      "week_start": "2026-11-02",
+      "notes": "Partial week: starts Wednesday midday.",
+      "changes": [],
+      "blocks": [
+        {
+          "slot": "middle",
+          "priority_id": "us-job",
+          "date": "2026-11-04"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "operations",
+          "date": "2026-11-04",
+          "notes": "Droplet swap, monitoring, database health check."
+        },
+        {
+          "slot": "morning",
+          "priority_id": "learn-ai",
+          "date": "2026-11-05"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "brazil-job",
+          "date": "2026-11-05"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "signalcvm",
+          "date": "2026-11-05"
+        },
+        {
+          "slot": "morning",
+          "priority_id": "training",
+          "date": "2026-11-06"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "us-job",
+          "date": "2026-11-06"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "hosting-calendar",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-09",
+      "notes": "Full week.",
+      "changes": [],
+      "blocks": [
+        {
+          "slot": "morning",
+          "priority_id": "training",
+          "date": "2026-11-09"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "us-job",
+          "date": "2026-11-09"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "hosting-calendar",
+          "date": "2026-11-09"
+        },
+        {
+          "slot": "morning",
+          "priority_id": "learn-ai",
+          "date": "2026-11-10"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "brazil-job",
+          "date": "2026-11-10"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "signalcvm",
+          "date": "2026-11-10"
+        },
+        {
+          "slot": "morning",
+          "priority_id": "training",
+          "date": "2026-11-11"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "us-job",
+          "date": "2026-11-11"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "hosting-calendar",
+          "date": "2026-11-11"
+        },
+        {
+          "slot": "morning",
+          "priority_id": "learn-ai",
+          "date": "2026-11-12"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "brazil-job",
+          "date": "2026-11-12"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "signalcvm",
+          "date": "2026-11-12"
+        },
+        {
+          "slot": "morning",
+          "priority_id": "training",
+          "date": "2026-11-13"
+        },
+        {
+          "slot": "middle",
+          "priority_id": "us-job",
+          "date": "2026-11-13"
+        },
+        {
+          "slot": "evening",
+          "priority_id": "operations",
+          "date": "2026-11-13"
+        }
+      ]
+    }
+  ]
+}

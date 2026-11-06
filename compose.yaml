@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+      target: app
+    restart: unless-stopped
+    environment:
+      APP_NAME: Workblocks
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: ${APP_KEY:?Set APP_KEY in .env}
+      APP_URL: ${APP_URL:-http://localhost:8088}
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /data/workblocks.sqlite
+      SESSION_SECURE_COOKIE: ${SESSION_SECURE_COOKIE:-false}
+      SESSION_DRIVER: file
+      CACHE_STORE: file
+      LOG_CHANNEL: stderr
+      WORKBLOCKS_PASSWORD: ${WORKBLOCKS_PASSWORD:?Set WORKBLOCKS_PASSWORD in .env}
+      BACKUP_DIRECTORY: /data/backups
+    volumes:
+      - workblocks_data:/data
+  web:
+    build:
+      context: .
+      target: web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    depends_on:
+      - app
+volumes:
+  workblocks_data:
