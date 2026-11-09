@@ -1,4 +1,6 @@
-# Workblocks plan feeding contract
+# Workblocks plan feeding contract — version 1 reset
+
+> For ongoing external scheduling, use the [version 2 exchange guide](feeding-contract-v2.md). This document describes the legacy fresh-start reset.
 
 Version: **1**  
 Format: **UTF-8 JSON**  
@@ -17,7 +19,7 @@ Supply one self-contained document with:
 3. A standing weekly template using weekday names.
 4. Zero or more specific weeks using calendar dates.
 
-Priorities are supporting data inside the plan. There is no separate priorities-only import, name matching, or merge operation.
+Priorities are supporting data inside the plan. There is no separate priorities-only import, name matching, or merge operation. For automatic file pickup and pending approvals, see [automated feeding](automated-feeding.md).
 
 The service can deliver a `.json` file for the user to upload. Generating a file does not itself trigger an import. The current app does not poll the external service or expose a separate service-token integration.
 
@@ -311,3 +313,11 @@ Workspace backup exports have a different format (`backup_version` and `tables`)
 ## 11. Instructions to give the scheduling service
 
 > Produce one valid UTF-8 JSON document matching Workblocks format version 1 and the supplied JSON Schema. Include all current priorities, the full standing template, and every dated week of unfinished work that should exist after replacement. Use explicit dates for weeks, lowercase weekday/slot values, integer minutes, and unique priority IDs, ranks, and block positions. A supplied week is complete: omitted positions stay empty. The import deletes existing unfinished work, including omitted weeks and carryover; do not send a patch. Do not resend completed work or include unsupported fields. Return the JSON file without Markdown fences or commentary.
+
+## Version 2 and automatic feeding
+
+For ongoing changes, use [plan-v2.schema.json](plan-v2.schema.json) and the [version 2 guide](feeding-contract-v2.md). The [automated feeding guide](automated-feeding.md) describes the running file worker and pending approvals.
+
+The service reads `documents/outbox/current.json`, keeps `workspace_id` and `base_revision` unchanged, and writes a complete version 2 document to `documents/inbox/<timestamp>-<description>.json`. The app keeps the outbox current after committed changes. Safe updates apply automatically; deletions, removed priorities, and every version 1 reset wait for user approval in Plan imports. Invalid or outdated feeds are rejected with a reason file.
+
+Every version 2 dated or carryover block requires an `id` UUID. Keep IDs when moving/editing existing work; generate a UUID for new work. New blocks without IDs are rejected. Version 2 requires an explicit `carryover` array, even when empty. It can change the assigned priority or duration of an unfinished block in place. Completed history is never editable through a version 2 feed. See the linked guides for split lineage, file-stability checks, result sidecars, and retry rules.

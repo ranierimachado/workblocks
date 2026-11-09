@@ -8,3 +8,14 @@ backend/.env
 backend/database/*.sqlite*
 backend/storage/logs/*
 backend/storage/app/backups
+
+documents/
+.local-workflow-backup/
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/framework/cache/data/*
+backend/storage/framework/testing/*
+backend/storage/framework/*.lock
+backend/bootstrap/cache/*.php
+backend/.env.*
+!backend/.env.example

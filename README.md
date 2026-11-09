@@ -29,9 +29,15 @@ node scripts/install-frontend.mjs
 
 ## Import contract
 
+**Hands-off file feeding:** see [automated feeding](contracts/automated-feeding.md). The local worker keeps `documents/outbox/current.json` current, applies safe inbox feeds, and holds deletions/resets in Plan imports for approval. It starts/stops with Workblocks through `~/Sites/dev.sh`.
+
+**Ongoing scheduling:** use the [version 2 exchange contract](contracts/feeding-contract-v2.md). Export the current schedule from Plan imports, let the service adjust it, then upload the returned JSON and review the change list. Carryover and block identities are included; outdated feeds are rejected.
+
+**Fresh start:** version 1 retains the destructive reset behavior described below.
+
 See the [plan feeding contract](contracts/feeding-contract.md) for the producer guide, field definitions, replacement behavior, examples, and API delivery instructions.
 
-`contracts/plan-v1.schema.json` is the mandatory JSON Schema. `examples/rani-plan.json` contains the supplied 24-hour partial week and 45-hour full week.
+`contracts/plan-v1.schema.json` is the reset schema; `contracts/plan-v2.schema.json` is the ongoing scheduler exchange schema. `examples/rani-plan.json` contains the supplied 24-hour partial week and 45-hour full week.
 
 Import through **Plan imports**, review the replacement summary, then confirm. Alternatively:
 

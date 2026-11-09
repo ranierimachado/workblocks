@@ -9,6 +9,7 @@ additional_fqdns: []
 database:
     type: mariadb
     version: "11.8"
+performance_mode: none
 working_dir:
     web: /var/www/html/backend
 omit_containers: [db]

@@ -13,3 +13,7 @@
 .drop-active{background:#e8f0df!important;border-color:#7e9e66!important;outline:2px dashed #88a373;outline-offset:-3px}
 .drag-help{font-size:10px;line-height:1.7;color:#92a080;margin:0 0 16px}
 @media(pointer:coarse){.block[draggable=true]{cursor:pointer}}
+
+.feed-downloads{display:flex;flex-direction:column;gap:13px}.feed-changes section{border-top:1px solid var(--line);padding-top:14px}.feed-changes p{font-size:11px;color:#7e8e72;line-height:1.8}
+
+.pending-feeds{margin-bottom:25px}.pending-feed{background:#fff;border:1px solid var(--line);padding:20px;border-radius:8px;margin-bottom:12px}.pending-feed strong{font-size:12px;overflow-wrap:anywhere}.pending-feed pre{white-space:pre-wrap;font:11px/1.8 var(--ion-font-family);color:#8c795b}

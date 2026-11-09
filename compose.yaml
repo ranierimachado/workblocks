@@ -1,10 +1,10 @@
 services:
-  app:
+  app: &app
     build:
       context: .
       target: app
     restart: unless-stopped
-    environment:
+    environment: &app_environment
       APP_NAME: Workblocks
       APP_ENV: production
       APP_DEBUG: "false"
@@ -18,8 +18,25 @@ services:
       LOG_CHANNEL: stderr
       WORKBLOCKS_PASSWORD: ${WORKBLOCKS_PASSWORD:?Set WORKBLOCKS_PASSWORD in .env}
       BACKUP_DIRECTORY: /data/backups
+      WORKBLOCKS_FEED_ENABLED: "true"
+      WORKBLOCKS_FEED_DIRECTORY: /data/documents
     volumes:
       - workblocks_data:/data
+      - workblocks_locks:/var/www/html/storage/framework
+    healthcheck:
+      test: ["CMD", "php", "artisan", "feed:status"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+  feed:
+    <<: *app
+    command: ["su-exec", "www-data", "php", "artisan", "feed:watch", "--interval=15"]
+    environment:
+      <<: *app_environment
+      WORKBLOCKS_SKIP_MIGRATION: "true"
+    depends_on:
+      app:
+        condition: service_healthy
   web:
     build:
       context: .
@@ -33,3 +50,4 @@ services:
       - app
 volumes:
   workblocks_data:
+  workblocks_locks:

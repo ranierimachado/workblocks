@@ -30,3 +30,6 @@ backend/storage/framework/views/*
 !backend/storage/framework/views/.gitignore
 backend/bootstrap/cache/*.php
 backend/storage/framework/*.lock
+
+# Local documents
+/documents/
